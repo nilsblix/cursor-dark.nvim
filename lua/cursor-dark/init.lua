@@ -3,6 +3,8 @@ local M = {}
 M.config = {
 	-- Enable UI customizations (statuscolumn, line numbers)
 	ui = true,
+	-- Disable all italic styling
+	disable_italics = false,
 	-- Enable plugin integrations
 	integrations = {
 		lspsaga = true,

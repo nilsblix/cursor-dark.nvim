@@ -3,6 +3,9 @@ local colors = require("cursor-dark.colors").palette
 local M = {}
 
 function M.setup()
+	local config = require("cursor-dark").config
+	local use_italics = not config.disable_italics
+
 	vim.cmd("hi clear")
 	if vim.fn.exists("syntax_on") then
 		vim.cmd("syntax reset")
@@ -50,7 +53,7 @@ function M.setup()
 		WinBarNC = { bg = colors.bg },
 
 		-- Syntax (Vim standard groups)
-		Comment = { fg = colors.comment, italic = true },
+		Comment = { fg = colors.comment, italic = use_italics },
 		Constant = { fg = colors.constant },
 		String = { fg = colors.string },
 		Character = { fg = colors.string },
@@ -84,7 +87,7 @@ function M.setup()
 		SpecialChar = { fg = colors.orange },
 		Tag = { fg = colors.green },
 		Delimiter = { fg = colors.variable },
-		SpecialComment = { fg = colors.comment, italic = true },
+		SpecialComment = { fg = colors.comment, italic = use_italics },
 		Debug = { fg = colors.red },
 
 		-- Treesitter (new standard)
@@ -120,7 +123,7 @@ function M.setup()
 		["@keyword.function"] = { fg = colors.keyword },
 		["@keyword.operator"] = { fg = colors.keyword },
 		["@keyword.return"] = { fg = colors.keyword },
-		["@keyword.import"] = { fg = colors.keyword, italic = true },
+		["@keyword.import"] = { fg = colors.keyword, italic = use_italics },
 
 		["@conditional"] = { fg = colors.keyword },
 		["@repeat"] = { fg = colors.keyword },
@@ -137,7 +140,7 @@ function M.setup()
 		["@field"] = { fg = colors.property },
 		["@attribute"] = { fg = colors.property },
 
-		["@comment"] = { fg = colors.comment, italic = true },
+		["@comment"] = { fg = colors.comment, italic = use_italics },
 
 		["@punctuation.delimiter"] = { fg = colors.variable },
 		["@punctuation.bracket"] = { fg = colors.variable },
@@ -166,7 +169,7 @@ function M.setup()
 		["@lsp.type.method"] = { fg = colors.func },
 		["@lsp.type.macro"] = { fg = colors.green },
 		["@lsp.type.decorator"] = { fg = colors.green },
-		["@lsp.type.comment"] = { fg = colors.comment, italic = true },
+		["@lsp.type.comment"] = { fg = colors.comment, italic = use_italics },
 
 		-- Additional semantic tokens
 		["@lsp.mod.readonly"] = { fg = colors.constant },
@@ -210,7 +213,7 @@ function M.setup()
 		GitSignsDelete = { fg = colors.git_delete },
 
 		-- Gitsigns (specific)
-		GitSignsCurrentLineBlame = { fg = colors.git_ignored, italic = true },
+		GitSignsCurrentLineBlame = { fg = colors.git_ignored, italic = use_italics },
 
 		-- Diff view
 		diffAdded = { fg = colors.git_add },
@@ -266,7 +269,7 @@ function M.setup()
 		["@markup.link"] = { fg = colors.fg_dark },
 		["@markup.link.url"] = { fg = colors.blue, underline = true },
 		["@markup.list"] = { fg = colors.fg_dark },
-		["@markup.italic"] = { italic = true },
+		["@markup.italic"] = { italic = use_italics },
 		["@markup.strong"] = { bold = true },
 		["@markup.strikethrough"] = { fg = colors.line_number, strikethrough = true },
 

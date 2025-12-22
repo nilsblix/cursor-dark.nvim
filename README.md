@@ -17,6 +17,7 @@ out, the theme and styling is superb.
 ```lua
 require("cursor-dark").setup({
   ui = true,
+  disable_italics = true,
   integrations = {
     lspsaga = true,
     nvim_tree = true,
