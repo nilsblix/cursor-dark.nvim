@@ -10,19 +10,23 @@ out, the theme and styling is superb.
 
 ### lazy.nvim
 ```lua
-{ "nilsblix/cursor-dark.nvim", name = "cursor-dark", priority = 1000 }
+{
+    "nilsblix/cursor-dark.nvim",
+    name = "cursor-dark",
+    priority = 1000,
+}
 ```
 
 ### Configuration
 ```lua
 require("cursor-dark").setup({
-  ui = true,
-  disable_italics = true,
-  integrations = {
-    lspsaga = true,
-    nvim_tree = true,
-    barbar = true,
-  },
+    ui = true,
+    disable_italics = false,
+    integrations = {
+        lspsaga = true,
+        nvim_tree = true,
+        barbar = true,
+    },
 })
 ```
 

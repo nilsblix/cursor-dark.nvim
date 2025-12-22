@@ -9,7 +9,7 @@ function M.setup()
 
 	-- Font settings (matching Cursor - compact size)
 	vim.opt.guifont = "JetBrains Mono:h11"
-	
+
 	-- Compact line spacing (matching Cursor)
 	vim.opt.linespace = 0
 
@@ -31,7 +31,7 @@ function M.setup()
 
 	-- Global statusline for cleaner layout
 	vim.opt.laststatus = 3
-	
+
 	-- Always show tabline
 	vim.opt.showtabline = 2
 
