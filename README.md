@@ -7,7 +7,7 @@ This project and structure was highly inspired by
 out, the theme and styling is superb.
 
 All of the colours are taken from [Anysphere
-Dark](https://github.com/hasokeric/cursor-anysphere-theme.).
+Dark](https://github.com/hasokeric/cursor-anysphere-theme).
 
 ## Installation
 
