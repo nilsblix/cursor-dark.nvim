@@ -6,6 +6,9 @@ This project and structure was highly inspired by
 [cursor-light.nvim](https://github.com/vpoltora/cursor-light.nvim). Go check it
 out, the theme and styling is superb.
 
+All of the colours are taken from [Anysphere
+Dark](https://github.com/hasokeric/cursor-anysphere-theme.).
+
 ## Installation
 
 ### lazy.nvim
@@ -21,12 +24,7 @@ out, the theme and styling is superb.
 ```lua
 require("cursor-dark").setup({
     ui = true,
-    disable_italics = false,
-    integrations = {
-        lspsaga = true,
-        nvim_tree = true,
-        barbar = true,
-    },
+    italics = true,
 })
 ```
 

@@ -1,16 +1,12 @@
 local M = {}
 
 M.config = {
-	-- Enable UI customizations (statuscolumn, line numbers)
+	-- Enable UI customizations (statuscolumn, line numbers).
 	ui = true,
-	-- Disable all italic styling
-	disable_italics = false,
-	-- Enable plugin integrations
-	integrations = {
-		lspsaga = true,
-		nvim_tree = true,
-		barbar = true,
-	},
+	-- Disable all italic styling.
+	italics = true,
+    -- Use magenta instead of white/grey for the operators.
+    coloured_operators = false,
 }
 
 function M.setup(opts)
@@ -24,36 +20,10 @@ function M.setup(opts)
 	if M.config.ui then
 		require("cursor-dark.ui").setup()
 	end
-
-	-- Apply plugin integrations
-	if M.config.integrations.lspsaga then
-		require("cursor-dark.integrations.lspsaga").setup()
-	end
-
-	if M.config.integrations.nvim_tree then
-		require("cursor-dark.integrations.nvim-tree").setup()
-	end
-
-	if M.config.integrations.barbar then
-		require("cursor-dark.integrations.barbar").setup()
-	end
 end
 
 function M.load()
 	M.setup()
-end
-
--- Export integration configs for users who want to merge them
-M.lspsaga_config = function()
-	return require("cursor-dark.integrations.lspsaga").config
-end
-
-M.nvim_tree_config = function()
-	return require("cursor-dark.integrations.nvim-tree").config
-end
-
-M.barbar_config = function()
-	return require("cursor-dark.integrations.barbar").config
 end
 
 return M

@@ -1,5 +1,7 @@
--- Color palette from Cursor Dark theme
--- Colors approximated from Cursor's alpha-blended values (Neovim doesn't support alpha)
+-- Colour palette from Cursor Dark theme
+-- Colours approximated from Cursor's alpha-blended values (Neovim doesn't support alpha)
+--
+-- Codes are taken from https://github.com/hasokeric/cursor-anysphere-theme.
 local M = {}
 
 M.palette = {
@@ -22,20 +24,21 @@ M.palette = {
 	func = "#EFB080", -- Functions
 	variable = "#D6D6DD", -- Variables
 	constant = "#83D6C5", -- Constants
-	number = "#EBC88D", -- Numbers
+	literal = "#EBC88D", -- Numbers
 	type = "#87C3FF", -- Types, classes
 	property = "#AA9BF5", -- Properties
 	operator = "#D6D6DD", -- Operators
 	operator_keyword = "#83D6C5", -- Operator keywords
+	macro = "#A8CC7C", -- Brighter green
 
 	-- Special colors
 	green = "#15AC91", -- Git added, decorators
-	green_bright = "#A8CC7C", -- Brighter green
 	cyan = "#75D3BA", -- Cyan
 	teal = "#82D2CE", -- Built-ins, booleans
 	orange = "#EFB080", -- Functions, parameters
 	yellow = "#F8C762", -- Modified files, warnings
 	yellow_dark = "#E5B95C", -- Darker yellow
+    yellow_bright = "#EBC88D",
 	red = "#F14C4C", -- Errors, deleted
 	red_bright = "#F44747", -- Brighter red
 	magenta = "#E394DC", -- Special keywords, strings
@@ -72,9 +75,9 @@ M.palette = {
 
 	-- Diff colors (approximations)
 	diff_add_bg = "#2C3C39",
-	diff_add_text_bg = "#3A544E",
+	diff_add_text_bg = "#2C3C39",
 	diff_delete_bg = "#412222",
-	diff_delete_text_bg = "#5C2828",
+	diff_delete_text_bg = "#412222",
 
 	-- Special UI colors
 	button_bg = "#228DF2",
