@@ -13,14 +13,14 @@ function M.setup()
 	-- Compact line spacing (matching Cursor)
 	vim.opt.linespace = 0
 
-	-- Cursor settings (matching Cursor - solid cursor)
+	-- Cursor settings
 	vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50"
 
 	-- Enable sign column (for git signs, diagnostics)
 	vim.opt.signcolumn = "yes:1"
 
-	-- Custom statuscolumn with centered line numbers and vertical separator (matching Cursor)
-	-- Format: sign + small left padding + number + right padding + separator + spacing
+    -- Custom statuscolumn with centered line numbers and vertical separator.
+    -- Format: sign + small left padding + number + right padding + separator + spacing
 	vim.opt.statuscolumn = "%s %4{v:lnum}  %#LineNrSeparator#│%*  "
 
 	-- Highlight for the separator line

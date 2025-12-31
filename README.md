@@ -23,8 +23,12 @@ Dark](https://github.com/hasokeric/cursor-anysphere-theme.).
 ### Configuration
 ```lua
 require("cursor-dark").setup({
-    ui = true,
-    italics = true,
+	-- Enable UI customizations (statuscolumn, line numbers).
+	ui = true,
+	-- Disable all italic styling.
+	italics = true,
+    -- Use magenta instead of white/grey for the operators.
+    coloured_operators = false,
 })
 ```
 
