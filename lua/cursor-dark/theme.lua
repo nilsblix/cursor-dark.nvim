@@ -104,7 +104,7 @@ function M.setup()
         ["@comment"] = { fg = colors.comment, italic = use_italics },               -- line and block comments
         ["@comment.documentation"] = { fg = colors.comment, italic = use_italics }, -- comments documenting code
 
-        ["@comment.error"] = { fg = colors.comment },   -- error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED`)
+        ["@comment.error"] = { fg = colors.comment },   -- error-type comments (e.g. `ERROR`, `BUG`, `DEPRECATED`)
         ["@comment.warning"] = { fg = colors.comment }, -- warning-type comments (e.g. `WARNING`, `FIX`, `HACK`)
         ["@comment.todo"] = { fg = colors.comment },    -- todo-type comments (e.g. `TODO`, `WIP`)
         ["@comment.note"] = { fg = colors.comment },    -- note-type comments (e.g. `NOTE`, `INFO`, `XXX`)
@@ -118,15 +118,13 @@ function M.setup()
         ["@markup.heading"] = { fg = colors.green },    -- headings, titles (including markers)
         ["@markup.heading.1"] = { fg = colors.cyan },   -- top-level heading
         ["@markup.heading.2"] = { fg = colors.teal },   -- section heading
-        -- FIXME: Add more headings...
-        -- ["@markup.heading.3"],      -- subsection heading
-        -- ["@markup.heading.4"],      -- and so on
-        -- ["@markup.heading.5"],      -- and so forth
-        -- ["@markup.heading.6"],      -- six levels ought to be enough for anybody
+        ["@markup.heading.3"] = { fg = colors.green },  -- subsection heading
+        ["@markup.heading.4"] = { fg = colors.blue },   -- and so on
+        ["@markup.heading.5"] = { fg = colors.purple }, -- and so forth
+        ["@markup.heading.6"] = { fg = colors.yellow }, -- six levels ought to be enough for anybody
 
-        -- FIXME: Add these two.
-        -- ["@markup.quote"],          -- block quotes
-        -- ["@markup.math"],           -- math environments (e.g. `$ ... $` in LaTeX)
+        ["@markup.quote"] = { fg = colors.comment, italic = use_italics },  -- block quotes
+        ["@markup.math"] = { fg = colors.orange },                          -- math environments (e.g. `$ ... $` in LaTeX)
 
         ["@markup.link"] = { fg = colors.fg_dark },         -- text references, footnotes, citations, etc.
         ["@markup.link.label"] = { fg = colors.fg_light },  -- link, reference descriptions
@@ -139,11 +137,10 @@ function M.setup()
         ["@markup.list.checked"] = { fg = colors.teal },    -- checked todo-style list markers
         ["@markup.list.unchecked"] = { fg = colors.teal },  -- unchecked todo-style list markers
 
-        -- FIXME: Add the diffs.
         -- Diffs
-        -- ["@diff.plus"],       -- added text (for diff files)
-        -- ["@diff.minus"],      -- deleted text (for diff files)
-        -- ["@diff.delta"],      -- changed text (for diff files)
+        ["@diff.plus"] = { fg = colors.git_add },       -- added text (for diff files)
+        ["@diff.minus"] = { fg = colors.git_delete },   -- deleted text (for diff files)
+        ["@diff.delta"] = { fg = colors.git_change },   -- changed text (for diff files)
 
         -- Tags
         ["@tag"] = { fg = colors.green },               -- XML-style tag names (and similar)
@@ -151,12 +148,11 @@ function M.setup()
         ["@tag.attribute"] = { fg = colors.property },  -- XML-style tag attributes
         ["@tag.delimiter"] = { fg = colors.fg_dark },   -- XML-style tag delimiters
 
-        -- FIXME: Add these four groups.
         -- Non-highlighting captures
-        -- ["@none"],    -- completely disable the highlight
-        -- ["@conceal"], -- captures that are only meant to be concealed
-        -- ["@spell"],   -- for defining regions to be spellchecked
-        -- ["@nospell"], -- for defining regions that should NOT be spellchecked
+        ["@none"] = { fg = colors.none, bg = colors.none },     -- completely disable the highlight
+        ["@conceal"] = { fg = colors.fg_light },                -- captures that are only meant to be concealed
+        ["@spell"] = { fg = colors.none, bg = colors.none },    -- for defining regions to be spellchecked
+        ["@nospell"] = { fg = colors.none, bg = colors.none },  -- for defining regions that should NOT be spellchecked
 
 		Normal = { fg = colors.fg, bg = colors.bg },
 		NormalFloat = { fg = colors.fg, bg = colors.bg_float },
@@ -302,13 +298,12 @@ function M.setup()
 		Structure = canon["@type"],
 		Typedef = canon["@type"],
 
-        -- FIXME: populate these with sensible defaults
-		-- Special = { fg = colors.orange },
-		-- SpecialChar = { fg = colors.orange },
-		-- Tag = { fg = colors.green },
+		Special = canon["@string.special"],
+		SpecialChar = canon["@string.escape"],
+		Tag = canon["@tag"],
 		Delimiter = canon["@variable"],
 		SpecialComment = canon["@comment"],
-		-- Debug = { fg = colors.red },
+		Debug = { fg = colors.red },
 
 		-- LSP Semantic Tokens (matching Cursor exactly)
 		["@lsp.type.namespace"] = canon["@module"],
