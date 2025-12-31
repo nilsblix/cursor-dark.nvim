@@ -305,7 +305,7 @@ function M.setup()
 		SpecialComment = canon["@comment"],
 		Debug = { fg = colors.red },
 
-		-- LSP Semantic Tokens (matching Cursor exactly)
+		-- LSP Semantic Tokens
 		["@lsp.type.namespace"] = canon["@module"],
 		["@lsp.type.type"] = canon["@type"],
 		["@lsp.type.class"] = canon["@type"],
@@ -322,6 +322,9 @@ function M.setup()
 		["@lsp.type.decorator"] = canon["@function.macro"],
 		["@lsp.type.comment"] = canon["@comment"],
 		["@lsp.type.builtinType"] = canon["@type"],
+
+        -- Language specific stuff (quite specific to my workflow/languages)
+		["@function.builtin.zig"] = { fg = colors.yellow_bright },
     }
 
 	for group, opts in pairs(canon) do
